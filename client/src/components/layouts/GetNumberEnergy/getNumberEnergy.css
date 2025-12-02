@@ -1,0 +1,189 @@
+.get-number-compass-container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfcff 0%, #f5f3ff 40%, #ede9fe 100%);
+    padding: 8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.get-number-compass-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.get-number-compass-form {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 2rem;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 20px 45px rgba(148, 163, 184, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInUp 0.6s ease;
+}
+
+.get-number-compass-form .title {
+    text-align: center;
+}
+
+.get-number-compass-form .title h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #111827;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.get-number-compass-form .title p {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.get-number-compass-form label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.get-number-compass-form label i {
+    color: #a855f7;
+    font-size: 1.125rem;
+}
+
+.get-number-compass-form input,
+.get-number-compass-form select {
+    padding: 0.875rem 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+    color: var(--text-dark);
+}
+
+.get-number-compass-form input:focus,
+.get-number-compass-form select:focus {
+    outline: none;
+    border-color: rgba(124, 58, 237, 0.8);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+}
+
+.get-number-compass-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.get-number-compass-form input[type="date"],
+.get-number-compass-form input[type="time"] {
+    cursor: pointer;
+}
+
+.get-number-compass-form input::placeholder {
+    color: #6b7280;
+}
+
+.get-number-compass-form button {
+    margin-top: 1rem;
+    padding: 1.125rem 2.5rem;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(168, 85, 247, 0.95) 100%);
+    color: #f9fafb;
+    border: none;
+    border-radius: 0.875rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 26px rgba(129, 140, 248, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.get-number-compass-form button i {
+    font-size: 1.375rem;
+}
+
+.get-number-compass-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 1);
+}
+
+.get-number-compass-form button:active {
+    transform: translateY(-1px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .get-number-compass-container {
+        padding: 5rem 0;
+    }
+
+    .get-number-compass-form {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+
+    .get-number-compass-form .title h2 {
+        font-size: 1.875rem;
+    }
+
+    .get-number-compass-form .title p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .get-number-compass-form input,
+    .get-number-compass-form select {
+        padding: 0.75rem 1rem;
+        font-size: 0.9375rem;
+        width: 100%;
+    }
+
+    .get-number-compass-form button {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    .get-number-compass-form label {
+        font-size: 0.9375rem;
+    }
+}

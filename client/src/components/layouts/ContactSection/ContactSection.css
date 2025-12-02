@@ -1,0 +1,241 @@
+.contact-section {
+    width: 100%;
+    background: radial-gradient(circle at 10% 0, #fdfcff 0%, #f5f3ff 40%, #ede9fe 100%);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+
+}
+
+.contact-section .contact-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-shadow: none;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section .contact-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0 5%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section .contact-content .contact-info {
+    flex: 1;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 16px 40px rgba(148, 163, 184, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.contact-section .contact-content .contact-info .logo {
+    max-width: 10rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section .contact-content .contact-info-title {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-section .contact-content .contact-info>p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1.125rem;
+}
+
+.contact-section .contact-content .contact-info-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section .contact-content .contact-info-details>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.contact-section .contact-content .contact-info-details>div:hover {
+    background: #eef2ff;
+    transform: translateX(4px);
+    box-shadow: 0 12px 32px rgba(148, 163, 184, 0.4);
+}
+
+.contact-section .contact-content .contact-info-details i {
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+    width: 2rem;
+    text-align: center;
+}
+
+.contact-section .contact-content .contact-info-details a,
+.contact-section .contact-content .contact-info-details span {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.contact-section .contact-content .contact-info-details a:hover {
+    color: #c4b5fd;
+}
+
+.contact-section .contact-content .contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 16px 40px rgba(148, 163, 184, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.contact-section .contact-content .contact-form label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: -0.75rem;
+}
+
+.contact-section .contact-content .contact-form input,
+.contact-section .contact-content .contact-form textarea {
+    padding: 0.875rem 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+.contact-section .contact-content .contact-form input:focus,
+.contact-section .contact-content .contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(124, 58, 237, 0.8);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+}
+
+.contact-section .contact-content .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-section .contact-content .contact-form button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(168, 85, 247, 0.95) 100%);
+    color: #f9fafb;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(129, 140, 248, 0.35);
+    margin-top: 0.5rem;
+}
+
+.contact-section .contact-content .contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+}
+
+.contact-section .contact-content .contact-form button:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 0 3rem;
+        overflow-x: hidden;
+    }
+
+    .contact-section .contact-section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .contact-section .contact-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .contact-section .contact-content .contact-info,
+    .contact-section .contact-content .contact-form {
+        width: 100%;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .contact-section .contact-content .contact-info-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-section .contact-content .contact-info>p {
+        font-size: 0.9375rem;
+    }
+
+    .contact-section .contact-content .contact-info-details>div {
+        padding: 0.875rem;
+        flex-wrap: wrap;
+    }
+
+    .contact-section .contact-content .contact-info-details>div:hover {
+        transform: translateX(0);
+    }
+
+    .contact-section .contact-content .contact-info-details a,
+    .contact-section .contact-content .contact-info-details span {
+        font-size: 0.75rem;
+        word-break: break-word;
+    }
+
+    .contact-section .contact-content .contact-form input,
+    .contact-section .contact-content .contact-form textarea {
+        padding: 0.75rem 1rem;
+        font-size: 0.9375rem;
+        width: 100%;
+    }
+
+    .contact-section .contact-content .contact-form button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+}

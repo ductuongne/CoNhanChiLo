@@ -1,0 +1,220 @@
+.tao-la-so-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfcff 0%, #f5f3ff 40%, #ede9fe 100%);
+    padding: 8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tao-la-so-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.tao-la-so-container {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 2rem;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 20px 45px rgba(148, 163, 184, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.tao-la-so-title {
+    text-align: center;
+    font-size: 2.75rem;
+    color: #111827;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.tao-la-so-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+}
+
+.tao-la-so-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group label i {
+    color: #a855f7;
+    font-size: 1.125rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.875rem 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+    color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: rgba(124, 58, 237, 0.8);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    cursor: pointer;
+}
+
+.form-group input::placeholder {
+    color: #6b7280;
+}
+
+.tao-la-so-btn {
+    margin-top: 1rem;
+    padding: 1.125rem 2.5rem;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(168, 85, 247, 0.95) 100%);
+    color: #f9fafb;
+    border: none;
+    border-radius: 0.875rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 26px rgba(129, 140, 248, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.tao-la-so-btn i {
+    font-size: 1.375rem;
+}
+
+.tao-la-so-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 1);
+}
+
+.time-select-wrapper {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.time-select {
+    flex: 1;
+}
+
+.tao-la-so-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tao-la-so-section {
+        padding: 5rem 0;
+    }
+
+    .tao-la-so-container {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+
+    .tao-la-so-title {
+        font-size: 1.875rem;
+    }
+
+    .tao-la-so-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.75rem 1rem;
+        font-size: 0.9375rem;
+        width: 100%;
+    }
+
+    .tao-la-so-btn {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    .form-group label {
+        font-size: 0.9375rem;
+    }
+}
+
+/* Animation for form appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tao-la-so-container {
+    animation: fadeInUp 0.6s ease;
+}

@@ -1,0 +1,144 @@
+/* Override reactjs-popup default styles */
+.popup-content {
+    margin: 0 !important;
+    background: transparent !important;
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(5px);
+}
+
+.custom-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.custom-popup-overlay .custom-popup-content {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.3s ease;
+}
+
+@keyframes popupSlideIn {
+    from {
+        transform: translateY(-50px) scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.custom-popup-overlay .custom-popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.custom-popup-overlay .custom-popup-header i {
+    font-size: 4rem;
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.custom-popup-overlay.success .custom-popup-header i {
+    color: #22c55e;
+}
+
+.custom-popup-overlay.error .custom-popup-header i {
+    color: #f97373;
+}
+
+.custom-popup-overlay.info .custom-popup-header i {
+    color: #a855f7;
+}
+
+.custom-popup-overlay .custom-popup-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.custom-popup-overlay .custom-popup-content p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.custom-popup-overlay .custom-popup-close-btn {
+    padding: 0.875rem 2.5rem;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(168, 85, 247, 0.95) 100%);
+    color: #f9fafb;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(129, 140, 248, 0.35);
+}
+
+.custom-popup-overlay .custom-popup-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.custom-popup-overlay .custom-popup-close-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-popup-overlay .custom-popup-content {
+        max-width: 90%;
+        padding: 2rem 1.5rem;
+    }
+
+    .custom-popup-overlay .custom-popup-header i {
+        font-size: 3rem;
+    }
+
+    .custom-popup-overlay .custom-popup-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .custom-popup-overlay .custom-popup-content p {
+        font-size: 1rem;
+    }
+}

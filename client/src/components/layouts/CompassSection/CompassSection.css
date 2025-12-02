@@ -1,0 +1,195 @@
+:root {
+    --compass-size: 24rem;
+    --compass-bg: #e5e7eb;
+    --compass-center-bg: #d1d5db;
+    --pointer-red: #dc2626;
+}
+
+.compass-container {
+    width: 100%;
+    min-height: 32rem;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+    padding-bottom: 4rem;
+}
+
+.compass-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    }
+
+.compass-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+.compass-wrapper {
+    position: relative;
+    width: var(--compass-size);
+    height: var(--compass-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-pointer {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: 0.5rem solid transparent;
+    border-bottom: 3rem solid var(--pointer-red);
+    z-index: 10;
+}
+
+.compass-circle {
+    position: relative;
+    width: calc(var(--compass-size) - 0.5rem);
+    height: calc(var(--compass-size) - 0.5rem);
+    border-radius: 50%;
+    background: var(--compass-bg);
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-rotor {
+    position: absolute;
+    inset: 1rem;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+.compass-ring {
+    position: absolute;
+    inset: 2rem;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.compass-ticks {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.tick {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 50%;
+    transform-origin: 50% 100%;
+}
+
+.tick::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: -1px;
+    width: 1.5px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.tick-sm::after { height: 6px; width: 1px; background: rgba(0, 0, 0, 0.25); }
+.tick-md::after { height: 14px; width: 2px; background: rgba(0, 0, 0, 0.5); }
+.tick-lg::after { height: 18px; width: 2.5px; left: -1.25px; background: rgba(0, 0, 0, 0.7); }
+
+.compass-sectors {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.sector {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 50%;
+    transform-origin: 50% 100%;
+}
+
+.direction-label,
+.meaning-label {
+    position: absolute;
+    left: 50%;
+    color: var(--text-dark);
+    white-space: nowrap;
+    text-align: center;
+    transform-origin: center;
+}
+
+.direction-label {
+    top: -0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    z-index: 3;
+}
+
+.meaning-label {
+    top: 4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    z-index: 2;
+}
+
+.compass-center {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--compass-center-bg);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.compass-center-number {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    :root { --compass-size: 20rem; }
+    .compass-container { padding: 2rem 1rem; min-height: 28rem; }
+    .compass-pointer { border-width: 0.45rem; border-bottom-width: 2.5rem; top: 0.4rem; }
+    .tick::after { top: 0.8rem; height: 8px; }
+    .tick-sm::after { height: 5px; }
+    .tick-md::after { height: 12px; }
+    .tick-lg::after { height: 16px; }
+    .direction-label { top: -1.5rem; font-size: 0.75rem; }
+    .meaning-label { top: 3.5rem; font-size: 0.65rem; }
+    .compass-center { width: 4rem; height: 4rem; }
+    .compass-center-number { font-size: 1.3rem; }
+}
+
+@media (max-width: 480px) {
+    :root { --compass-size: 18rem; }
+    .compass-container { padding: 1.5rem 0.75rem; min-height: 24rem; }
+    .direction-label { top: -0.5rem; font-size: 0.7rem; }
+    .meaning-label { top: 3.5rem; font-size: 0.6rem; }
+    .compass-center { width: 3.5rem; height: 3.5rem; }
+    .compass-center-number { font-size: 1.1rem; }
+}

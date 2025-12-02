@@ -1,0 +1,42 @@
+:root {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Mystic light purple palette (B2: light UI + rich effects) */
+  --primary-purple: #7c3aed;   /* primary brand violet */
+  --secondary-purple: #a855f7; /* supporting lilac */
+  --accent-gold: #fbbf24;      /* soft golden highlight */
+  --accent-blue: #38bdf8;      /* astral blue accent */
+  --bg-light: #f9fafb;         /* main app background */
+  --bg-dark: #ede9fe;          /* soft lavender section background */
+  --text-dark: #111827;        /* main text */
+  --text-light: #6b7280;       /* muted text */
+  --white: #ffffff;
+
+  color: var(--text-dark);
+  background: linear-gradient(135deg, #f9fafb 0%, #f5f3ff 40%, #ede9fe 100%);
+  background-attachment: fixed;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
