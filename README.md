@@ -159,5 +159,5 @@ Dự án này được phát triển cho mục đích cá nhân/thương mại.
 ## 👨‍💻 Author
 
 **Ductuongne && ChatGPT**
-Thanks ChatGPT hihi
+***Thanks ChatGPT hihi***
 ---
